@@ -1,0 +1,26 @@
+{
+  "name": "project-two",
+  "version": "1.0.0",
+  "description": "Project 2: Jack &amp; Nat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fthbby/Project-Two.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fthbby/Project-Two/issues"
+  },
+  "homepage": "https://github.com/fthbby/Project-Two#readme",
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6"
+  }
+}
