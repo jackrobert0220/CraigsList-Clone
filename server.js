@@ -4,6 +4,8 @@ require("dotenv").config();
 // Required External Modules
 // all required code that is not our own
 const express = require('express');
+const mongoose = require('mongoose');
+
 
 /* ====== Internal Modules  ====== */
 // Required Internal Modules
@@ -19,14 +21,16 @@ const app = express();
 //(app.use)
 
 /* ====== System Variables  ====== */
-const PORT = 4000; // full caps signify a config variable
+const PORT = process.env.PORT || 4000; // full caps signify a config variable
 
 /* ====== App Configuration  ====== */
 app.set('view engine', 'ejs');
 
 /* ====== Routes  ====== */
+app.get("/", function(req, res) {
+        res.send("It works!");
+    });
 
-	
 /* ====== Server bind  ====== */
 // bind the application to the port via app.listen(number, optional function to do after bind)
 app.listen(PORT, function () {
