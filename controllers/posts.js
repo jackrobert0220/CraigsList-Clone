@@ -2,7 +2,7 @@ const db = require('../models/post');
 
 //INDUCES
 
-
+//index
 const idx = (req,res) =>{
     db.Post.find({}, function(err, foundPosts) {
         if(err) return res.send(err);
@@ -11,6 +11,7 @@ const idx = (req,res) =>{
     })
 }
 
+//new
 const newPost = (req, res) => {
     db.Post.find({}, (err, foundPosts) => {
         if(err) return res.send(err);
@@ -19,7 +20,7 @@ const newPost = (req, res) => {
     })
 }
 
-
+//delete
 const delete = (req, res)=> {
     db.Post.findByIdAndDelete(req.params.id, (err, foundPost) => {
         if (err) return res.send(err);
@@ -54,4 +55,23 @@ const create = (req,res) => {
 }
 
 //edit
+
+const edit = (req,res) => {
+    db.Post.findById(req.params.id, (err, foundPosts) => {
+        if(err) return res.send(err)
+        const context = {posts: foundPosts};
+        res.render('posts/edit', context)
+    })
+}
+
+//show
+
+const show = (req,res) => {
+    db.Post.findById(req.params.id, (err, foundPosts) => {
+        if(err) return res.send(err)
+        
+        const context = {posts: foundPosts}
+        return res.render('posts/show, context')
+    })
+}
 
