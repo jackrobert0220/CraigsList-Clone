@@ -70,8 +70,10 @@ const show = (req,res) => {
     db.posts.findById(req.params.id, (err, foundPosts) => {
         if(err) return res.send(err)
         
-        const context = {posts: foundPosts};
-        return res.render('posts/show', context)
+
+        const context = {posts: foundPosts}
+        return res.render('posts/show', 'context')
+
     });
 };
 
