@@ -5,9 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>OurList Post || <%= post.title %></title>
-
-        <title></title>
+        <title>OurList Post || <%= posts.title %></title>
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,19 +28,21 @@
 		<main>
 			<section>
 				<h2>Post Info</h2>
-				<a href="/posts/<%=post._id %>/edit">Edit</a>
+				<a href="/posts/<%=posts._id %>/edit">Edit</a>
 				<ul>
-					<li>Name: <%= post.title %></li>
+					<li>Name: <%= posts.title %></li>
 				</ul>
 			</section>
-			<form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+			<form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
 				<input type="submit" value="Delete" />
 			</form>
+
 		</main>
-=======
-    Show page
+
         
 
         <script src="" async defer></script>
     </body>
 </html>
+
+<!DOCTYPE html>
