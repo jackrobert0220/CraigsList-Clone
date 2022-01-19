@@ -15,10 +15,10 @@
     <body>
         
         <nav>
-			<h1>Welcome to Blog App!</h1>
+			<h1>Show Page!</h1>
 			<ul>
 				<li>
-					<a href="/posts">Authors</a>
+					<a href="/posts">Posts</a>
 				</li>
 				<li>
 					<a href="/posts/new">Add a Post</a>
@@ -28,7 +28,7 @@
 		<main>
 			<section>
 				<h2>Post Info</h2>
-				<a href="/authors/<%=post._id %>/edit">Edit</a>
+				<a href="/posts/<%=post._id %>/edit">Edit</a>
 				<ul>
 					<li>Name: <%= post.title %></li>
 				</ul>
