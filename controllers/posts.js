@@ -1,9 +1,11 @@
 const db = require('../models');
 
+
 //INDUCES
 
 //index
 const index = (req,res) =>{
+
     db.Post.find({}, function(err, foundPosts) {
         if(err) return res.send(err);
         const context = {posts: foundPosts};
@@ -77,7 +79,6 @@ const show = (req,res) => {
 
 
 
-
 module.exports = {
     index,
     show,
@@ -87,3 +88,4 @@ module.exports = {
     update,
     delete,
 };
+
