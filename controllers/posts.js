@@ -71,7 +71,7 @@ const show = (req,res) => {
         if(err) return res.send(err)
         
         const context = {posts: foundPosts}
-        return res.render('posts/show, context')
+        return res.render('posts/show', 'context')
     });
 };
 
