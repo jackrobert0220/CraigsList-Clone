@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require('../models/post');
 
 
 //INDUCES
@@ -9,7 +9,7 @@ const index = (req,res) =>{
     db.Post.find({}, function(err, foundPosts) {
         if(err) return res.send(err);
         const context = {posts: foundPosts};
-        res.render('posts/index', context),
+        res.render('posts/index', context)
     })
 }
 
@@ -23,7 +23,7 @@ const newPost = (req, res) => {
 }
 
 //delete
-const delete = (req, res)=> {
+const destroy = (req, res)=> {
     db.Post.findByIdAndDelete(req.params.id, (err, foundPost) => {
         if (err) return res.send(err);
 
@@ -86,6 +86,6 @@ module.exports = {
     newPost,
     edit,
     update,
-    delete,
+    destroy,
 };
 
