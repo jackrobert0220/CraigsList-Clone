@@ -14,7 +14,7 @@ const methodOverride = require('method-override');
 // all code that is our code
 require('./config/database');
 const routes = require("./routes");
-const indexRouter = require('./routes/index');
+// const indexRouter = require('./routes/index');
 
 
 
@@ -47,10 +47,10 @@ app.set('view engine', 'ejs');
 
 /* ====== Routes  ====== */
 // app.use("/posts", indexRouter);
-app.get("/posts", (req,res)=>{
-    res.render('./posts/index')
-}); //need to change this and use 'use' to use the routers.... 
-
+// app.get("/posts", (req,res)=>{
+//     res.render('./posts/index')
+// }); //need to change this and use 'use' to use the routers.... 
+app.use("/posts", routes.posts);
 
 
 app.get("/", (req, res) => {
