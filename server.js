@@ -10,6 +10,8 @@ const mongoose = require('mongoose');
 /* ====== Internal Modules  ====== */
 // Required Internal Modules
 // all code that is our code
+require('./config/database');
+
 
 /* ====== Instanced Module  ====== */
 // Create the Express app
