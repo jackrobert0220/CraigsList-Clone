@@ -72,7 +72,7 @@ const show = (req,res) => {
         
 
         const context = {posts: foundPosts}
-        return res.render('posts/show', 'context')
+        return res.render('posts/show', context)
 
     });
 };
