@@ -14,7 +14,7 @@
     <body>
         <a href="/posts/new">Add a post</a>
         <br>
-        
+
        Here are some posts!
        <br>
 
@@ -25,7 +25,7 @@
         <ul>
             <% posts.forEach(post => { %>
             <li>
-                <a href="/posts/<%= posts._id %>"> <%= posts.title %></a>
+                <a href="/posts/<%= post._id %>"> <%= post.title %></a>
             </li>
             <% })%>
         </ul>
