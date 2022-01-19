@@ -1,12 +1,11 @@
-const db = require('../models/post');
+const db = require('../models');
 
 
 //INDUCES
 
 //index
 const index = (req,res) =>{
-
-    db.Post.find({}, function(err, foundPosts) {
+    db.posts.find({}, function(err, foundPosts) {
         if(err) return res.send(err);
         const context = {posts: foundPosts};
         res.render('posts/index', context)
@@ -15,7 +14,7 @@ const index = (req,res) =>{
 
 //new
 const newPost = (req, res) => {
-    db.Post.find({}, (err, foundPosts) => {
+    db.posts.find({}, (err, foundPosts) => {
         if(err) return res.send(err);
         const context = {posts: foundPosts};
         res.render('posts/new', context)
@@ -24,7 +23,7 @@ const newPost = (req, res) => {
 
 //delete
 const destroy = (req, res)=> {
-    db.Post.findByIdAndDelete(req.params.id, (err, foundPost) => {
+    db.posts.findByIdAndDelete(req.params.id, (err, foundPost) => {
         if (err) return res.send(err);
 
         return res.redirect('/posts')
@@ -34,7 +33,7 @@ const destroy = (req, res)=> {
 //update
 
 const update = (req,res) =>{
-    db.Post.findByIdAndUpdate(req.params.id,
+    db.posts.findByIdAndUpdate(req.params.id,
         {
             $set: {...req.body},
         },
@@ -50,7 +49,7 @@ const update = (req,res) =>{
 //create
 
 const create = (req,res) => {
-    db.Post.create(req.body, function(err, createdPost) {
+    db.posts.create(req.body, function(err, createdPost) {
         if(err) return res.send(err)
         return res.redirect('/posts')
     })
@@ -59,7 +58,7 @@ const create = (req,res) => {
 //edit
 
 const edit = (req,res) => {
-    db.Post.findById(req.params.id, (err, foundPosts) => {
+    db.posts.findById(req.params.id, (err, foundPosts) => {
         if(err) return res.send(err)
         const context = {posts: foundPosts};
         res.render('posts/edit', context)
@@ -69,7 +68,7 @@ const edit = (req,res) => {
 //show
 
 const show = (req,res) => {
-    db.Post.findById(req.params.id, (err, foundPosts) => {
+    db.posts.findById(req.params.id, (err, foundPosts) => {
         if(err) return res.send(err)
         
         const context = {posts: foundPosts}
