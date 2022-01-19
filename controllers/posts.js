@@ -10,8 +10,8 @@ const index = (req,res) =>{
         if(err) return res.send(err);
         const context = {posts: foundPosts};
         res.render('posts/index', context)
-    })
-}
+    });
+};
 
 //new
 const newPost = (req, res) => {
@@ -19,8 +19,8 @@ const newPost = (req, res) => {
         if(err) return res.send(err);
         const context = {posts: foundPosts};
         res.render('posts/new', context)
-    })
-}
+    });
+};
 
 //delete
 const destroy = (req, res)=> {
@@ -28,8 +28,8 @@ const destroy = (req, res)=> {
         if (err) return res.send(err);
 
         return res.redirect('/posts')
-    })
-}
+    });
+};
 
 //update
 
@@ -43,9 +43,8 @@ const update = (req,res) =>{
         (err, updatedPost) => {
             if(err) return res.send(err);
             return res.redirect(`/posts/${updatedPost._id}`)
-        }
-    )
-}
+        });
+};
 
 //create
 
@@ -53,8 +52,8 @@ const create = (req,res) => {
     db.Post.create(req.body, function(err, createdPost) {
         if(err) return res.send(err)
         return res.redirect('/posts')
-    })
-}
+    });
+};
 
 //edit
 
@@ -63,8 +62,8 @@ const edit = (req,res) => {
         if(err) return res.send(err)
         const context = {posts: foundPosts};
         res.render('posts/edit', context)
-    })
-}
+    });
+};
 
 //show
 
@@ -74,8 +73,8 @@ const show = (req,res) => {
         
         const context = {posts: foundPosts}
         return res.render('posts/show, context')
-    })
-}
+    });
+};
 
 
 
