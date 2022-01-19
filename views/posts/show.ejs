@@ -32,8 +32,10 @@
 				<a href="/posts/<%=posts._id %>/edit">Edit</a>
 				<ul>
 					<li>Name: <%= posts.title %></li>
+
                     <li>Price: <%= posts.price %></li>
                     <li>Description: <%= posts.description %></li>
+
 				</ul>
 
                 <h2>Comments</h2>
@@ -70,9 +72,11 @@
 			<form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
 				<input type="submit" value="Delete" />
 			</form>
+
 		</main>
-        
 
         <script src="" async defer></script>
     </body>
 </html>
+
+<!DOCTYPE html>
