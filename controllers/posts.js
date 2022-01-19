@@ -86,11 +86,6 @@ module.exports = {
     newPost,
     edit,
     update,
-<<<<<<< HEAD
     destroy,
 };
-=======
-    delete,
-};
 
->>>>>>> 106df8ab3231f7c91fd0e69385522880aa163582
