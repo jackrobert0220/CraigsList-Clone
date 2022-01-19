@@ -13,10 +13,31 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         
-        <script src="" async defer></script>
+    
+    
+        <form id="new-form" action="/posts" method="POST">
+            <label>Posting Title:</label>
+            <input type="text" name="title" placeholder ='What are you selling?'>
+            <label>Price:</label>
+            <input type="text" name="price" placeholder = '$0'>
+            <!-- <label>MPAA Rating</label> -->
+            <!-- <select name="mpaaRating">
+              <option value="G">G</option>
+              <option value="PG">PG</option>
+              <option value="PG-13">PG-13</option>
+              <option value="R">R</option> -->
+            </select>
+            <br>
+            <label>Description</label>
+            <input type="text" name="description" placeholder ='Tell us about it!'>
+            <!-- <label>Now Showing:</label>
+            <input type="checkbox" name="nowShowing" checked>
+            <input type="submit" value="Add Movie"> -->
+            <input type="submit" value="Create" />
+
+          </form>
+
+
     </body>
 </html>

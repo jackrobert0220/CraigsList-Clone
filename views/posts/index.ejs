@@ -12,10 +12,23 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <a href="/posts/new">Add a post</a>
+        <br>
+
        Here are some posts!
        <br>
-       <a href="/posts/new">Add a post</a>
 
+       <% if(!posts.length) { %>
+        <p>There is nothing for sale yet!</p>
+        <% } %>
+
+        <ul>
+            <% posts.forEach(post => { %>
+            <li>
+                <a href="/posts/<%= post._id %>"> <%= post.title %></a>
+            </li>
+            <% })%>
+        </ul>
         
         <script src="" async defer></script>
     </body>
