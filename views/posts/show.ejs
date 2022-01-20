@@ -16,22 +16,18 @@
     </head>
     <body>
 
-        
         <nav>
-			<h1>Show Page!</h1>
-			<form>
-                <input type="button" value="Go back!" onclick="history.back()">
-               </form>
-            
-            <ul>
-				<li>
-					<a href="/posts">Posts</a>
-				</li>
-				<li>
-					<a href="/posts/new">Add a Post</a>
-				</li>
-			</ul>
-		</nav>
+            <div class="nav-wrapper">
+                <a href='/'>OURLIST</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Go Back</a></li>
+                <li><a href="/posts/new">Create a New Listing!</a></li>
+                <li><a href="/posts">View all Post listings</a></li>
+            </ul>
+            </div>
+          </nav>
+
+    
 		<main>
 			<section>
 				<h2>Post Info</h2>

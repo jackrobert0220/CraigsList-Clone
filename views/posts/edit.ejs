@@ -11,29 +11,28 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <%- include ('../partials/head.ejs') %>
+
     </head>
     <body>
 
-        
         <nav>
-			<h1>Edit Page!</h1>
-			<form>
-                <input type="button" value="Go back!" onclick="history.back()">
-               </form>
-			<ul>
-				<li>
-					<a href="/posts">Posts</a>
-				</li>
-				<li>
-					<a href="/posts/new">Add a Post</a>
-				</li>
-			</ul>
-		</nav>
+            <div class="nav-wrapper">
+                <a href='/'>OURLIST</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/posts/<%=posts.id%>">Go Back</a></li>
+                <li><a href="/posts/new">Create a New Listing!</a></li>
+                <li><a href="/posts">View all Post listings</a></li>
+            </ul>
+            </div>
+          </nav>
+        
+
 		<main>
 			<section>
 				
 
-            
+            <div>
             
             
 
@@ -55,7 +54,7 @@
 				<input type="submit" value="Update Listing" />
 			</form>
 
-            
+        </div>
             </section>
         </main>
         <script src="" async defer></script>
