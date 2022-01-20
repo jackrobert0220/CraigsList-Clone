@@ -1,9 +1,9 @@
 const router = require("express").Router();
 
-const commentsCtrl = require('../controllers');
+const commentsCtrl = require('../controllers/comments');
 
 
-router.post('/movies/:id/reviews', commentsCtrl.posts.create);
+router.post('/posts/:id/comments', commentsCtrl.create);
 
 
 
