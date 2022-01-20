@@ -10,15 +10,15 @@ const commentSchema = new Schema({
 const postSchema = new Schema({
     title: {
         type: String,
-        required: true,
+        // required: true,
     },
     price: {
         type: Number,
-        required: true,
+        // required: true,
     },
     description: {
         type: String,
-        required: true,
+        // required: true,
     },
     comments: [commentSchema]
 }, {

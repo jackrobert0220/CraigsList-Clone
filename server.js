@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 // Required Internal Modules
 // all code that is our code
 require('./config/database');
-const routes = require("./routes");
+const routes = require("./routes/index");
 
 // const indexRouter = require('./routes/index');
 
