@@ -11,5 +11,8 @@ const router = express.Router();
 
 module.exports = {
 	posts: require("./posts"),
-  comments: require('./comments')
+  books: require('./books'),
+  comments: require('./comments'),
+  furniture: require('./furniture'),
+  electronics: require('./electronics'),
 };

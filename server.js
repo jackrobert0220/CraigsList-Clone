@@ -57,6 +57,11 @@ app.set('view engine', 'ejs');
 // }); //need to change this and use 'use' to use the routers.... 
 app.use("/posts", routes.posts);
 app.use('/posts', routes.comments); //need to change this?
+app.use("/books", routes.books);
+app.use("/electronics", routes.electronics);
+app.use("/furniture", routes.furniture);
+
+
 
 app.get("/", (req, res) => {
 	res.render("index");
