@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>OurList Post || <%= posts.title %></title>
+
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        
+        <nav>
+			<h1>Show Page!</h1>
+			<ul>
+				<li>
+					<a href="/posts">Posts</a>
+				</li>
+				<li>
+					<a href="/posts/new">Add a Post</a>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<h2>Edit <%= posts.title %></h2>
+				
+                <form action="/posts/<%= posts._id %>?_method=PUT" method="POST">
+                    <input type="text" name="name" value="<%= posts.title %>" />
+                    <input type="submit" value="Update" />
+                </form>
+
+                <form action="/posts/<%= posts._id %>?_method=PUT" method="POST">
+                    <input type="text" name="name" value="<%= posts.price %>" />
+                    <input type="submit" value="Update" />
+                </form>
+
+                <form action="/posts/<%= posts._id %>?_method=PUT" method="POST">
+                    <input type="text" name="name" value="<%= posts.description %>" />
+                    <input type="submit" value="Update" />
+                </form>
+            
+            
+            
+            
+            </section>
+        </main>
+        <script src="" async defer></script>
+    </body>
+</html>
