@@ -5,7 +5,7 @@ const commentSchema = new Schema({
     content: String,
 },{
     timestamps: true
-})
+});
 
 const postSchema = new Schema({
     title: {

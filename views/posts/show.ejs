@@ -11,6 +11,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <%- include ('../partials/head.ejs') %>
+
     </head>
     <body>
 
@@ -37,10 +39,11 @@
                     <li>Description: <%= posts.description %></li>
 
 				</ul>
+			</section>
 
-                <h2>Comments</h2>
-<form id="add-review-form" method="POST"
-  action="/posts/<%= posts._id %>/reviews">
+<h2>Comments</h2>
+<form id="add-comment-form" method="POST"
+  action="/posts/<%= posts._id %>/comments">
   <label>Review:</label>
   <textarea name="content"></textarea>
   
@@ -51,15 +54,14 @@
   <table>
     <thead>
       <tr>
-        <th>Date</th>
         <th>Review</th>
-        <th>Rating</th>
+
       </tr>
     </thead>
     <tbody>
       <% posts.comments.forEach(function(r) { %>
       <tr>
-        <td><%= r.createdAt.toLocaleDateString() %></td>
+        <!-- <td><%= r.createdAt.toLocaleDateString() %></td> -->
         <td><%= r.content %></td>
       </tr>
       <% }); %>
@@ -68,12 +70,16 @@
   <% } else { %>
   <h5>No Reviews Yet</h5>
   <% } %>
-			</section>
+            
 			<form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
 				<input type="submit" value="Delete" />
 			</form>
 
+
+
+
 		</main>
+
 
         <script src="" async defer></script>
     </body>
