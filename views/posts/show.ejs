@@ -32,6 +32,12 @@
 			<section>
 				<h2>Post Info</h2>
 				<a href="/posts/<%=posts._id %>/edit">Edit</a>
+                <form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" />
+                </form>
+    
+
+
 				<ul>
 					<li>Name: <%= posts.title %></li>
 
@@ -70,13 +76,7 @@
   <% } else { %>
   <h5>No Reviews Yet</h5>
   <% } %>
-            
-			<form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
-				<input type="submit" value="Delete" />
-			</form>
-
-
-
+        
 
 		</main>
 
