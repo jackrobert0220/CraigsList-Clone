@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <%- include ('../partials/head.ejs') %>
+
+    </head>
+    <body>
+        <nav>
+
+			<b>OURLIST</b>
+            <ul>
+				<li>
+		    <!-- <form>
+                <input type="button" value="Go back!" onclick="history.back()">
+               </form> -->
+			
+               <a href="/furniture/new">Create New Listing!</a>
+            </li>
+        </ul> 
+        
+		</nav>
+
+    
+        <nav>
+        </nav>
+
+        <div>
+       <h3>Listings:</h3>
+       <br>
+
+       <% if(!furniture.length) { %>
+        <p>There is nothing for sale yet!</p>
+        <% } %>
+
+        <ul>
+            <% furniture.forEach(furniture => { %>
+            <li>
+                <a href="/furniture/<%= furniture._id %>"> <%= furniture.title %></a>
+            </li>
+            <% })%>
+        </ul>
+        
+        <script src="" async defer></script>
+    </div>
+    </body>
+</html>
