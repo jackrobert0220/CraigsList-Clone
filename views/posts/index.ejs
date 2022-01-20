@@ -10,21 +10,31 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <%- include ('../partials/head.ejs') %>
+
     </head>
     <body>
         <nav>
-			<h1>OurList</h1>
-		    <form>
+
+			<b>OURLIST</b>
+            <ul>
+				<li>
+		    <!-- <form>
                 <input type="button" value="Go back!" onclick="history.back()">
-               </form>
+               </form> -->
 			
                <a href="/posts/new">Create New Listing!</a>
-		
+            </li>
+        </ul> 
         
 		</nav>
 
+    
+        <nav>
+        </nav>
 
-       Listings:
+        <div>
+       <h3>Listings:</h3>
        <br>
 
        <% if(!posts.length) { %>
@@ -40,5 +50,6 @@
         </ul>
         
         <script src="" async defer></script>
+    </div>
     </body>
 </html>

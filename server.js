@@ -14,6 +14,7 @@ const methodOverride = require('method-override');
 // all code that is our code
 require('./config/database');
 const routes = require("./routes");
+
 // const indexRouter = require('./routes/index');
 
 
@@ -40,6 +41,9 @@ app.use((req,res,next)=> {
 });
 
 
+
+
+
 /* ====== System Variables  ====== */
 const PORT = process.env.PORT || 4000; // full caps signify a config variable
 
@@ -52,7 +56,7 @@ app.set('view engine', 'ejs');
 //     res.render('./posts/index')
 // }); //need to change this and use 'use' to use the routers.... 
 app.use("/posts", routes.posts);
-
+app.use('/posts', routes.comments); //need to change this?
 
 app.get("/", (req, res) => {
 	res.render("index");
