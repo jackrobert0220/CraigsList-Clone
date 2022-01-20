@@ -10,8 +10,18 @@ function create(req, res) {
     });
   }
 
+  const destroy = (req, res)=> {
+    db.posts.findByIdAndDelete(req.params.id, (err, foundPost) => {
+        if (err) return res.send(err);
+
+        return res.redirect(`/posts/${posts._id}`)
+    });
+};
+
+
 module.exports = {
     create,
+    destroy,
 }
 
 

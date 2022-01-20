@@ -19,7 +19,11 @@
         
         <nav>
 			<h1>Show Page!</h1>
-			<ul>
+			<form>
+                <input type="button" value="Go back!" onclick="history.back()">
+               </form>
+            
+            <ul>
 				<li>
 					<a href="/posts">Posts</a>
 				</li>
@@ -32,11 +36,11 @@
 			<section>
 				<h2>Post Info</h2>
 				<a href="/posts/<%=posts._id %>/edit">Edit</a>
+
                 <form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete" />
                 </form>
     
-
 
 				<ul>
 					<li>Name: <%= posts.title %></li>
@@ -56,27 +60,39 @@
   <input type="submit" value="Add Comment">
 </form>
 
+
 <% if (posts.comments.length) { %>
   <table>
     <thead>
       <tr>
         <th>Review</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <% posts.comments.forEach(function(r) { %>
-      <tr>
-        <!-- <td><%= r.createdAt.toLocaleDateString() %></td> -->
-        <td><%= r.content %></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  <% } else { %>
-  <h5>No Reviews Yet</h5>
-  <% } %>
         
+    </tr>
+</thead>
+<tbody>
+    <% posts.comments.forEach(function(r) { %>
+        <tr>
+            <!-- <td><%= r.createdAt.toLocaleDateString() %></td> -->
+            <td><%= r.content %></td> 
+            <br>
+            <td>
+            <form action="/posts/<%= posts.comments._id %>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete" /></form>
+
+             </td>
+        </table>
+    </tr>
+    
+    
+    <% }); %>
+</tbody>
+
+<% } else { %>
+    <h5>No Reviews Yet</h5>
+    <% } %>
+    
+    
 
 		</main>
 
