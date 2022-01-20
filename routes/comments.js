@@ -4,7 +4,7 @@ const commentsCtrl = require('../controllers');
 
 
 
-router.post('/posts/:id/comments', commentsCtrl.posts.create);
+router.post('/:id/comments', commentsCtrl.comments.create);
 
 
 
