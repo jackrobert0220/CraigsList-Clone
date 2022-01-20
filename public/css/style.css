@@ -12,7 +12,11 @@
     margin-top: 10%;
 }
 
-
+.showcard {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
 
 body {
     display: flex;
@@ -26,3 +30,7 @@ body {
 
 
 
+
+.headingtitle {
+    /* font-size: 50px; */
+}

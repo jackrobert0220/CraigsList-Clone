@@ -10,7 +10,7 @@
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <%- include ('../partials/head.ejs') %>
 
     </head>
@@ -29,39 +29,43 @@
 
     
 		<main>
-			<section>
-				<h2>Post Info</h2>
 
-               
+			<section class = 'showcard'>
+                <h5>Details about: <%= posts.title %></h5>
 
 
+                <div>
                 <div class="row">
                     <div class="col s12 m7">
                       <div class="card">
                         <div class="card-image">
-                          <!-- <img src="images/sample-1.jpg"> -->
-                          <span class="card-title">Card Title</span>
                         </div>
                         <div class="card-content">
 
-				<ul>
-					<li>Name: <%= posts.title %></li>
-
-                    <li>Price: <%= posts.price %></li>
+				    <ul>
+					<li>Title: <%= posts.title %></li>
+                    <li>Price: $<%= posts.price %></li>
                     <li>Description: <%= posts.description %></li>
 
-				</ul>
+			    	</ul>
 
             </div>
             <div class="card-action">
-                <a href="/posts/<%=posts._id %>/edit">Edit</a>
-                <form action="/posts/<%= posts._id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete" />
+
+                
+                <a class = 'btn waves-effect waves-light' href="/posts/<%=posts._id %>/edit">Edit</a>
+
+             
+
+                <form class ='btn waves-effect waves-light' action="/posts/<%= posts._id %>?_method=DELETE" method="POST"> <input type="submit" value="Delete" />
                 </form>
+
+
             </div>
           </div>
         </div>
       </div>
+    </div>
     
         <div>
         </div>
@@ -69,10 +73,9 @@
 
 			</section>
 
-<h2>Comments</h2>
 <form id="add-comment-form" 
   action="/posts/<%= posts._id %>/comments" method="POST">
-  <label>Review:</label>
+  <label>Comments</label>
   <textarea name="content"></textarea>
   
   <input type="submit" value="Add Comment">
@@ -112,8 +115,16 @@
     
     
 
-		</main>
 
+
+    
+		</main>
+        <footer class="page-footer">
+            <div class="container">
+                  OurList by Jack & Nat
+                  </div>
+                </div>
+              </footer>
 
         <script src="" async defer></script>
     </body>
