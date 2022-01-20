@@ -10,8 +10,9 @@
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
         <%- include ('../partials/head.ejs') %>
+
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
     <body>
@@ -20,7 +21,7 @@
             <div class="nav-wrapper">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/posts/<%=posts.id%>">Go Back</a></li>
+                <li><a href="/posts/<%=posts._id%>">Go Back</a></li>
                 <li><a href="/posts/new">Create a New Listing!</a></li>
                 <li><a href="/posts">View all Post listings</a></li>
             </ul>
@@ -29,33 +30,45 @@
         
 
 		<main>
-			<section>
-				
+        
+			<section class = 'editformsection'>
+                <h5>Edit Listing: <%= posts.title %></h5>
 
-            <div>
             
-            
+            <div class ='editform'>
 
-                <h1>Edit <%= posts.title %></h1>
 			<form action="/posts/<%= posts._id%>?_method=PUT" method="POST">
 				<p>
+                    Title
 					<input
 						type="text"
 						name="title"
 						placeholder="Title"
-						value="<%= posts.title %>"/>
+						value="<%= posts.title %>"/> 
 				</p>
 				<p>
-					<textarea type="text" name="price" placeholder="price">
-                <%= posts.price %></textarea>
+
+                    Price
+ 
+                <input
+						type="text"
+						name="price"
+						placeholder="price"
+						value="<%= posts.price %>"/>
 				</p>
+                Description
+
                 <textarea type="text" name="description" placeholder="Body">
                     <%= posts.description %></textarea>
-				<input type="submit" value="Update Listing" />
+                    <p>
+				<input type="submit" value="Update Listing" /></p>
 			</form>
 
         </div>
             </section>
+
+            
+
         </main>
         <script src="" async defer></script>
     </body>

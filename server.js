@@ -61,6 +61,7 @@ app.use("/books", routes.books);
 app.use("/electronics", routes.electronics);
 app.use("/furniture", routes.furniture);
 
+app.use(express.static(__dirname + '/public'));
 
 
 app.get("/", (req, res) => {

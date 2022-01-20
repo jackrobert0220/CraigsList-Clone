@@ -1,0 +1,14 @@
+.editform {
+    border: 1px solid black;
+    padding: 1.5%;
+    text-align: center;
+    /* margin-top: 25%; */
+    /* width: 65%; */
+
+}
+
+.editformsection {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
