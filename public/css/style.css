@@ -9,6 +9,17 @@
     margin-top: 10%;
 }
 
+.indexform {
+    border: 1px solid black;
+    padding: 1.5%;
+    text-align: center;
+    /* margin-top: 25%; */
+    /* width: 65%; */
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
 .editformsection {
     width: 500px;
     margin: 0 auto;

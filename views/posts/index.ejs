@@ -9,22 +9,12 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <%- include ('../partials/head.ejs') %>
 
     </head>
     <body>
-        <!-- <nav>
-
-            <b><a href='/'>OURLIST</a></B>
-
-               <nav>
-               <a href='/'>Go Back!<a> 
-                <a href="/posts/new">Create New Listing!</a>
-               </nav>
-
- 
-        </nav> -->
+    
     
         <nav>
             <div class="nav-wrapper">
@@ -38,9 +28,11 @@
           </nav>
        <br>
 
-        <div>
-       <h3>Listings:</h3>
-       <br>
+       <div class ='indexform'> 
+        <p class ='headingtitle'> Post Listings: </p>
+    <div class='editformsection'>
+
+     
 
        <% if(!posts.length) { %>
         <p>There is nothing for sale yet!</p>
@@ -54,7 +46,7 @@
             <% })%>
         </ul>
         
-        <script src="" async defer></script>
+    </div>
     </div>
     </body>
 </html>
