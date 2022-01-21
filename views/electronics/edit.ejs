@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>OurList Post || <%= electronic.title %></title>
+        <title>OurList Post || <%= electronics.title %></title>
 
 
         <meta name="description" content="">
@@ -20,7 +20,7 @@
             <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/electronics/<%=electronic._id%>">Go Back</a></li>
+                <li><a href="/electronics/<%=electronics._id%>">Go Back</a></li>
                 <li><a href="/electronics/new">Create a New Listing!</a></li>
                 <li><a href="/electronics">View all electronics listings</a></li>
             </ul>
@@ -28,50 +28,51 @@
           </nav>
         
 
-		<main>
-        
-			<section class = 'editformsection'>
-                <h5>Edit Listing: <%= electronic.title %></h5>
-
-            
-            <div class ='editform'>
-
-			<form action="/electronics/<%= electronic._id%>?_method=PUT" method="POST">
-				<p>
-                    Title
-					<input
-						type="text"
-						name="title"
-						placeholder="Title"
-						value="<%= electronic.title %>"/> 
-				</p>
-				<p>
-
-                    Price
- 
-                <input
-						type="number"
-						name="price"
-						placeholder="price"
-						value="<%= electronic.price %>"/>
-				</p>
-                Description
-
-                <textarea type="text" name="description" placeholder="Body">
-                    <%= electronic.description %></textarea>
+          <main>
+            <br><br><br><br>
+                <section class = 'editformsection'>
+                    <span class='craigslist'>edit listing for: </span>
+                    <br><br>
+                    <span class='headingtitle'>'<%= electronics.title %> '</span>
+                <br><br>
+                <div class ='editform'>
+    
+                <form action="/electronic/<%= electronics._id%>?_method=PUT" method="POST">
                     <p>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Update Listing
-
-                  </button>
-			</form>
-
-        </div>
-            </section>
-
-            
-
-        </main>
-
+                        Title
+                        <input
+                            type="text"
+                            name="title"
+                            placeholder="Title"
+                            value="<%= electronics.title %>"/> 
+                    </p>
+                    <p>
+    
+                        Price
+     
+                    <input
+                            type="number"
+                            name="price"
+                            placeholder="price"
+                            value="<%= electronics.price %>"/>
+                    </p>
+                    Description
+    <br><br>
+                    <textarea type="text" name="description" placeholder="Body">
+                        <%= electronics.description %></textarea>
+                        <p>
+                    <button class="btn waves-effect waves-light" id='clbutton' type="submit" name="action">Update Listing
+    
+                      </button>
+                </form>
+    
+            </div>
+                </section>
+    
+                
+    
+            </main>
+    
         
 
     

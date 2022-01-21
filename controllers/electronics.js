@@ -59,7 +59,7 @@ const create = (req,res) => {
 const edit = (req,res) => {
     db.Electronic.findById(req.params.id, (err, foundElectronic) => {
         if(err) return res.send(err)
-        const context = {Electronic: foundElectronic};
+        const context = {electronics: foundElectronic};
         res.render('electronics/edit', context)
     });
 };
