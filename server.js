@@ -62,6 +62,7 @@ app.use('/books', routes.commentsBook);
 app.use("/electronics", routes.electronics);
 app.use("/electronics", routes.commentsElectronic);
 app.use("/furniture", routes.furniture);
+app.use("/furniture", routes.commentsFurniture1);
 
 app.use(express.static(__dirname + '/public'));
 
