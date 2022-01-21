@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <%- include ('../partials/head.ejs') %>
+
+    </head>
+    <body>
+
+    <main>
+        <nav>
+            <div class="navbar">
+                <a href='/'>OURLIST</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Go Back</a></li>
+                <li><a href="/electronics/new">Create a New Listing!</a></li>
+                <li><a href="/electronics">View all electronics listings</a></li>
+            </ul>
+            </div>
+          </nav>
+
+    
+    
+    <div>
+        <section class = 'editformsection'>
+            <h5>Create a new listing</h5>
+
+        
+        <div class ='editform'>
+        <form id="new-form" action="/electronics" method="POST">
+            
+            <label>Posting Title:</label>
+            <input type="text" name="title" placeholder ='What are you selling?'>
+            <label>Price:</label>
+            <input type="number" name="price" placeholder = '$0'>
+        
+            </select>
+            <br>
+            <label>Description</label>
+            <input type="text" name="description" placeholder ='Tell us about it!'>
+   
+            <input type="submit"  value="Create Listing" />
+
+          </form>
+        </div>
+</section>
+        </div>
+        </main>
+
+        <footer class="page-footer"id ='navbar'>
+            
+                  Lead Developers: Jack Glazer & Nat Zeng
+                  
+                </div>
+              </footer>
+
+    </body>
+</html>

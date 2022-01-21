@@ -18,7 +18,7 @@
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Go Back</a></li>
 
-                <li><a href="/posts/new">Create a New Listing!</a></li>
+                <li><a href="/electronics/new">Create a New Listing!</a></li>
               </ul>
             </div>
           </nav>
@@ -29,14 +29,14 @@
        <h3>Listings:</h3>
        <br>
 
-       <% if(!books.length) { %>
+       <% if(!electronics.length) { %>
         <p>There is nothing for sale yet!</p>
         <% } %>
 
         <ul>
-            <% books.forEach(book => { %>
+            <% electronics.forEach(electronic => { %>
             <li>
-                <a href="/books/<%= book._id %>"> <%= book.title %></a>
+                <a href="/electronics/<%= electronic._id %>"> <%= electronic.title %></a>
             </li>
             <% })%>
         </ul>
