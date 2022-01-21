@@ -18,7 +18,7 @@
     <body>
 
         <nav>
-            <div class="nav-wrapper">
+            <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/posts/<%=posts._id%>">Go Back</a></li>
@@ -61,7 +61,7 @@
                 <textarea type="text" name="description" placeholder="Body">
                     <%= posts.description %></textarea>
                     <p>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Update Listing
+                <button class="btn waves-effect waves-light" id='clbutton' type="submit" name="action">Update Listing
 
                   </button>
 			</form>
@@ -78,9 +78,9 @@
     
 
 
-        <footer class="page-footer">
+        <footer class="page-footer"id ='navbar'>
         <div class="container">
-              OurList by Jack & Nat
+              Lead Developers: Jack Glazer & Nat Zeng
               </div>
             </div>
           </footer>

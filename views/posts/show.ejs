@@ -17,10 +17,10 @@
     <body>
 
         <nav>
-            <div class="nav-wrapper">
+            <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Go Back</a></li>
+                <li><a href="/posts">Go Back</a></li>
                 <li><a href="/posts/new">Create a New Listing!</a></li>
                 <li><a href="/posts">View all Post listings</a></li>
             </ul>
@@ -39,6 +39,8 @@
                     <div class="col s12 m7">
                       <div class="card">
                         <div class="card-image">
+                            <!-- <div class="card blue-grey darken-1">
+                                <div class="card-content white-text"> -->
                         </div>
                         <div class="card-content">
 
@@ -53,11 +55,11 @@
             <div class="card-action">
 
                 
-                <a class = 'btn waves-effect waves-light' href="/posts/<%=posts._id %>/edit">Edit</a>
+                <a class = 'btn waves-effect waves-light' id='clbutton' href="/posts/<%=posts._id %>/edit">Edit</a>
 
              
 
-                <form class ='btn waves-effect waves-light' action="/posts/<%= posts._id %>?_method=DELETE" method="POST"> <input type="submit" value="Delete" />
+                <form class ='btn waves-effect waves-light' id='clbutton' action="/posts/<%= posts._id %>?_method=DELETE" method="POST"> <input type="submit" style="color: white;" value="Delete" />
                 </form>
 
 
@@ -81,38 +83,47 @@
   
   <textarea name="content" id ='commentbox' ></textarea>
   <br>
-  <input type="submit" class='btn waves-effect waves-light' value="Add Comment">
+  <input type="submit" class='btn waves-effect waves-light' id='clbutton' value="Add Comment">
 </form>
 
 
 <% if (posts.comments.length) { %>
-  <div class ='reviews'>
-    <thead>
-      <tr>
-        <th>Comments</th>
 
-        
-    </tr>
-</thead>
+ 
 <body>
-    <div>
-    <% posts.comments.forEach(function(r) { %>
-        <tr>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.content %></td> 
-            <br>
-            <td>
-            <form action="/posts/<%= posts.comments._id %>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete" /></form>
+  
+  <div>
+    <p class="collection-header"><h5>Comments</h5></p>
 
-             </td>
-            </div>
-    </tr>
-    
-    
-    <% }); %>
-</div>
-</body>
+  <% posts.comments.forEach(function(r) { %>
+
+      <ul class="collection with-header">
+        
+          <li class ='collection-item'><div><span style="color: grey;"><%= r.createdAt.toLocaleDateString() %> </span>
+            <br><br>
+          <%= r.content %>
+          <form class = 'secondary-content' action="/posts/<%= posts.comments._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" /></form>
+        </div></li> 
+         
+      
+
+         
+          </div>
+ 
+  
+  
+</ul>
+
+
+<% }); %>
+
+
+
+
+
+
+
 
 <% } else { %>
     <h5>No Comments Yet</h5>
@@ -124,13 +135,14 @@
 
     
 		</main>
-        <footer class="page-footer">
-            <div class="container">
-                  OurList by Jack & Nat
-                  </div>
-                </div>
-              </footer>
+       
+    <footer class="page-footer"id ='navbar'>
+      <div class="container">
+            Lead Developers: Jack Glazer & Nat Zeng
+            </div>
+          </div>
+        </footer>
 
-        <script src="" async defer></script>
+
     </body>
 </html>

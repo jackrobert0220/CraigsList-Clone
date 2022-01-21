@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,25 +7,15 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <%- include ('../partials/head.ejs') %>
 
     </head>
     <body>
-        <!-- <nav>
-
-            <b><a href='/'>OURLIST</a></B>
-
-               <nav>
-               <a href='/'>Go Back!<a> 
-                <a href="/posts/new">Create New Listing!</a>
-               </nav>
-
- 
-        </nav> -->
+    
     
         <nav>
-            <div class="nav-wrapper">
+            <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Go Back</a></li>
@@ -37,10 +25,12 @@
             </div>
           </nav>
        <br>
+<main>
+       <div class ='indexform'> 
+        <p class ='headingtitle'> Post Listings: </p>
+    <div class='editformsection' id ='postlistings'>
 
-        <div>
-       <h3>Listings:</h3>
-       <br>
+     
 
        <% if(!posts.length) { %>
         <p>There is nothing for sale yet!</p>
@@ -48,13 +38,27 @@
 
         <ul>
             <% posts.forEach(post => { %>
-            <li>
-                <a href="/posts/<%= post._id %>"> <%= post.title %></a>
+            <li><span style="color: grey;"><%= post.createdAt.toLocaleDateString() %> </span>
+                <a href="/posts/<%= post._id %>"> <%= post.title%></a> 
+
             </li>
             <% })%>
         </ul>
-        
-        <script src="" async defer></script>
+    </main>
+
+    <footer class="page-footer"id ='navbar'>
+        <div class="container">
+              Lead Developers: Jack Glazer & Nat Zeng
+              </div>
+            </div>
+          </footer>
+          
     </div>
+    </div>
+
+   
+
+
     </body>
+    
 </html>
