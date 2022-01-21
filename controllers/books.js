@@ -77,6 +77,11 @@ const show = (req,res) => {
     });
 };
 
+module.exports = {
+    create,
+    destroy,
+}
+
 
 
 module.exports = {

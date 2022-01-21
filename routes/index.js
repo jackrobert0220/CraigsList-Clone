@@ -15,4 +15,5 @@ module.exports = {
   comments: require('./comments'),
   furniture: require('./furniture'),
   electronics: require('./electronics'),
+  commentsBook: require('./commentsBook'),
 };

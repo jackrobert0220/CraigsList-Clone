@@ -58,6 +58,7 @@ app.set('view engine', 'ejs');
 app.use("/posts", routes.posts);
 app.use('/posts', routes.comments); //need to change this?
 app.use("/books", routes.books);
+app.use('/books', routes.commentsBook);
 app.use("/electronics", routes.electronics);
 app.use("/furniture", routes.furniture);
 
