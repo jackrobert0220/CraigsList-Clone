@@ -5,7 +5,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<<<<<<< HEAD
         <title>OurList Post || <%= electronics.title %></title>
+=======
+        <title>OurList Post || <%= Electronic.title %></title>
+>>>>>>> a1bd7cbcf59a51f9b07ffce4a5331f58361acd99
 
 
         <meta name="description" content="">
@@ -20,7 +24,11 @@
             <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
+<<<<<<< HEAD
                 <li><a href="/electronics/<%=electronics._id%>">Go Back</a></li>
+=======
+                <li><a href="/electronics/<%=Electronic._id%>">Go Back</a></li>
+>>>>>>> a1bd7cbcf59a51f9b07ffce4a5331f58361acd99
                 <li><a href="/electronics/new">Create a New Listing!</a></li>
                 <li><a href="/electronics">View all electronics listings</a></li>
             </ul>
@@ -28,6 +36,7 @@
           </nav>
         
 
+<<<<<<< HEAD
           <main>
             <br><br><br><br>
                 <section class = 'editformsection'>
@@ -38,6 +47,39 @@
                 <div class ='editform'>
     
                 <form action="/electronic/<%= electronics._id%>?_method=PUT" method="POST">
+=======
+		<main>
+        
+			<section class = 'editformsection'>
+                <h5>Edit Listing: <%= Electronic.title %></h5>
+
+            
+            <div class ='editform'>
+
+			<form action="/electronics/<%= Electronic._id%>?_method=PUT" method="POST">
+				<p>
+                    Title
+					<input
+						type="text"
+						name="title"
+						placeholder="Title"
+						value="<%= Electronic.title %>"/> 
+				</p>
+				<p>
+
+                    Price
+ 
+                <input
+						type="number"
+						name="price"
+						placeholder="price"
+						value="<%= Electronic.price %>"/>
+				</p>
+                Description
+
+                <textarea type="text" name="description" placeholder="Body">
+                    <%= Electronic.description %></textarea>
+>>>>>>> a1bd7cbcf59a51f9b07ffce4a5331f58361acd99
                     <p>
                         Title
                         <input

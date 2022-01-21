@@ -5,7 +5,7 @@ const db = require('../models');
 
 //index
 const index = (req,res) =>{
-    db.furniture.find({}, function(err, foundfurniture) {
+    db.Furniture1.find({}, function(err, foundfurniture) {
         if(err) return res.send(err);
         const context = {furniture: foundfurniture};
         res.render('furniture/index', context)
@@ -14,16 +14,16 @@ const index = (req,res) =>{
 
 //new
 const newPost = (req, res) => {
-    db.furniture.find({}, (err, foundfurniture) => {
+    db.Furniture1.find({}, (err, foundFurniture) => {
         if(err) return res.send(err);
-        const context = {furniture: foundfurniture};
+        const context = {furniture: foundFurniture};
         res.render('furniture/new', context)
     });
 };
 
 //delete
 const destroy = (req, res)=> {
-    db.furniture.findByIdAndDelete(req.params.id, (err, foundfurniture) => {
+    db.Furniture1.findByIdAndDelete(req.params.id, (err, foundfurniture1) => {
         if (err) return res.send(err);
 
         return res.redirect('/furniture')
@@ -33,22 +33,22 @@ const destroy = (req, res)=> {
 //update
 
 const update = (req,res) =>{
-    db.furniture.findByIdAndUpdate(req.params.id,
+    db.Furniture1.findByIdAndUpdate(req.params.id,
         {
             $set: {...req.body},
         },
 
         {new:true},
-        (err, updatedPost) => {
+        (err, updatedFurniture1) => {
             if(err) return res.send(err);
-            return res.redirect(`/furniture/${updatedfurniture._id}`)
+            return res.redirect(`/furniture/${updatedFurniture1._id}`)
         });
 };
 
 //create
 
 const create = (req,res) => {
-    db.furniture.create(req.body, function(err, createdfurniture) {
+    db.Furniture1.create(req.body, function(err, createdFurniture1) {
         if(err) return res.send(err)
         return res.redirect('/furniture')
     });
@@ -57,9 +57,9 @@ const create = (req,res) => {
 //edit
 
 const edit = (req,res) => {
-    db.furniture.findById(req.params.id, (err, foundfurniture) => {
+    db.Furniture1.findById(req.params.id, (err, foundFurniture1) => {
         if(err) return res.send(err)
-        const context = {furniture: foundfurniture};
+        const context = {Furniture1: foundFurniture1};
         res.render('furniture/edit', context)
     });
 };
@@ -67,11 +67,11 @@ const edit = (req,res) => {
 //show
 
 const show = (req,res) => {
-    db.furniture.findById(req.params.id, (err, foundfurniture) => {
+    db.Furniture1.findById(req.params.id, (err, foundFurniture) => {
         if(err) return res.send(err)
         
 
-        const context = {furniture: foundfurniture}
+        const context = {furniture: foundFurniture}
         return res.render('furniture/show', context)
 
     });

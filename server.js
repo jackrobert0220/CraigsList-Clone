@@ -54,14 +54,15 @@ app.set('view engine', 'ejs');
 // app.use("/posts", indexRouter);
 // app.get("/posts", (req,res)=>{
 //     res.render('./posts/index')
-// }); //need to change this and use 'use' to use the routers.... 
-app.use("/posts", routes.posts);
-app.use('/posts', routes.comments); //need to change this?
+ 
+app.use("/gigs", routes.gigs);
+app.use('/gigs', routes.commentsGig); 
 app.use("/books", routes.books);
 app.use('/books', routes.commentsBook);
 app.use("/electronics", routes.electronics);
 app.use("/electronics", routes.commentsElectronic);
 app.use("/furniture", routes.furniture);
+app.use("/furniture", routes.commentsFurniture1);
 
 app.use(express.static(__dirname + '/public'));
 

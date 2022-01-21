@@ -7,7 +7,7 @@ const commentSchema = new Schema({
     timestamps: true
 });
 
-const postSchema = new Schema({
+const furniture1Schema = new Schema({
     title: {
         type: String,
         required: true,
@@ -26,4 +26,4 @@ const postSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Post', postSchema);
+module.exports = mongoose.model('Furniture1', furniture1Schema);
