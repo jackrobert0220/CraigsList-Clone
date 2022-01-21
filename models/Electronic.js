@@ -7,7 +7,7 @@ const commentSchema = new Schema({
     timestamps: true
 });
 
-const electronicsSchema = new Schema({
+const electronicSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -26,4 +26,4 @@ const electronicsSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Electronics', electronicsSchema);
+module.exports = mongoose.model('Electronic', electronicSchema);

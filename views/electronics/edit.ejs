@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>OurList Post || <%= book.title %></title>
+        <title>OurList Post || <%= electronic.title %></title>
 
 
         <meta name="description" content="">
@@ -20,9 +20,9 @@
             <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/books/<%=book._id%>">Go Back</a></li>
-                <li><a href="/books/new">Create a New Listing!</a></li>
-                <li><a href="/books">View all Books listings</a></li>
+                <li><a href="/electronics/<%=electronic._id%>">Go Back</a></li>
+                <li><a href="/electronics/new">Create a New Listing!</a></li>
+                <li><a href="/electronics">View all electronics listings</a></li>
             </ul>
             </div>
           </nav>
@@ -31,19 +31,19 @@
 		<main>
         
 			<section class = 'editformsection'>
-                <h5>Edit Listing: <%= book.title %></h5>
+                <h5>Edit Listing: <%= electronic.title %></h5>
 
             
             <div class ='editform'>
 
-			<form action="/books/<%= book._id%>?_method=PUT" method="POST">
+			<form action="/electronics/<%= electronic._id%>?_method=PUT" method="POST">
 				<p>
                     Title
 					<input
 						type="text"
 						name="title"
 						placeholder="Title"
-						value="<%= book.title %>"/> 
+						value="<%= electronic.title %>"/> 
 				</p>
 				<p>
 
@@ -53,12 +53,12 @@
 						type="number"
 						name="price"
 						placeholder="price"
-						value="<%= book.price %>"/>
+						value="<%= electronic.price %>"/>
 				</p>
                 Description
 
                 <textarea type="text" name="description" placeholder="Body">
-                    <%= book.description %></textarea>
+                    <%= electronic.description %></textarea>
                     <p>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Update Listing
 

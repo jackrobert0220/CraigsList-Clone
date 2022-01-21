@@ -60,6 +60,7 @@ app.use('/posts', routes.comments); //need to change this?
 app.use("/books", routes.books);
 app.use('/books', routes.commentsBook);
 app.use("/electronics", routes.electronics);
+app.use("/electronics", routes.commentsElectronic);
 app.use("/furniture", routes.furniture);
 
 app.use(express.static(__dirname + '/public'));
