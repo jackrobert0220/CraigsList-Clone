@@ -1,17 +1,21 @@
 .editform {
     border: 1px solid black;
-    padding: 1.5%;
+    border-radius: 20px;
+    padding: 3%;
     text-align: center;
     /* margin-top: 25%; */
     /* width: 65%; */
     width: 500px;
     margin: 0 auto;
     margin-top: 10%;
+
 }
 
 .indexform {
     border: 1px solid black;
-    padding: 1.5%;
+    border-radius: 15px;
+
+    padding: 3%;
     text-align: center;
     /* margin-top: 25%; */
     /* width: 65%; */
@@ -57,6 +61,7 @@ body {
 
 .headingtitle {
 font-size: 30px;
+font-family: times;
 }
 
 .comments {

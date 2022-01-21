@@ -7,29 +7,24 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <%- include ('../partials/head.ejs') %>
 
     </head>
     <body>
         <nav>
-
-			<b>OURLIST</b>
-            <ul>
-				<li>
-		    <!-- <form>
-                <input type="button" value="Go back!" onclick="history.back()">
-               </form> -->
-			
-               <a href="/books/new">Create New Listing!</a>
-            </li>
-        </ul> 
-        
-		</nav>
+            <div class="navbar">
+                <a href='/'>OURLIST</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Go Back</a></li>
+                <li><a href="/posts/new">Create a New Listing!</a></li>
+              </ul>
+            </div>
+          </nav>
 
     
-        <nav>
-        </nav>
-
+    
+<main>
         <div>
        <h3>Listings:</h3>
        <br>
@@ -46,7 +41,20 @@
             <% })%>
         </ul>
         
-        <script src="" async defer></script>
+    
     </div>
+</main>
+
+<footer class="page-footer"id ='navbar'>
+    <div class="container">
+          Lead Developers: Jack Glazer & Nat Zeng
+          </div>
+        </div>
+      </footer>
+      
+</div>
+</div>
+
+
     </body>
 </html>
