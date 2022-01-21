@@ -10,10 +10,20 @@
     margin-top: 10%;
 
 }
+.craigslist {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    background: lightgrey;
+    font-size: 30px;
+    font-family: times;
+    color: blue;
+}
 
 .indexform {
-    border: 1px solid black;
-    border-radius: 15px;
+    /* border: 1px solid black; */
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    /* border-radius: 15px; */
 
     padding: 3%;
     text-align: center;
@@ -33,16 +43,18 @@
 #postlistings {
     text-align: left;
 }
+
 .showcard {
-    width: 700px;
+    width: 600px;
     margin: 0 auto;
     margin-top: 10%;
-    /* text-align: center; */
+
+    text-align: center;
 
     /* text-align: center; */
     /* position: fixed; */
     /* top: 50%; */
-    left: 50%;
+    /* left: 50%; */
     /* transform: translate(-50%, -50%); */
 }
 
