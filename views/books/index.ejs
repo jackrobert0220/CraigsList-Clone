@@ -18,45 +18,39 @@
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Go Back</a></li>
 
-                <li><a href="/posts/new">Create a New Listing!</a></li>
+                <li><a href="/books/new">Create a New Listing!</a></li>
               </ul>
             </div>
           </nav>
 
-    
-<main>
-        <div>
-       <h3>Listings:</h3>
-       <br>
-
-       <% if(!books.length) { %>
-        <p>There is nothing for sale yet!</p>
-        <% } %>
-
-        <ul>
-            <% books.forEach(book => { %>
-            <li>
-                <a href="/books/<%= book._id %>"> <%= book.title %></a>
-            </li>
-            <% })%>
-        </ul>
-        
-
-    </div>
-</main>
-
-<footer class="page-footer"id ='navbar'>
-    <div class="container">
-          Lead Developers: Jack Glazer & Nat Zeng
-          </div>
-        </div>
-      </footer>
-
+    <br>
+    <main>
+        <div class ='indexform'> 
+         <p class ='craigslist'> book listings: </p>
+     <div class='editformsection' id ='postlistings'>
+ 
       
-</div>
-</div>
-
-
-    </body>
-
-</html>
+ 
+        <% if(!books.length) { %>
+         <p>There is nothing for sale yet!</p>
+         <% } %>
+ 
+         <ul>
+             <% books.forEach(book => { %>
+             <li><span style ='color:grey'><%= book.createdAt.toLocaleDateString() %> </span>
+                 <a style="color: blue" href="/books/<%= book._id %>"> <%= book.title%></a> 
+ 
+             </li>
+             <% })%>
+         </ul>
+     </main>
+ 
+     <footer class="page-footer"id ='navbar'>
+               Lead Developers: Jack Glazer & Nat Zeng
+             </div>
+           </footer>
+ 
+ 
+     </body>
+     
+ </html>

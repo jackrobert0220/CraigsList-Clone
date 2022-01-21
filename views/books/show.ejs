@@ -32,104 +32,113 @@
 		<main>
 
 			<section class = 'showcard'>
-                <h5>Details about: <%= books.title %></h5>
-
-
-                <div>
-                <div class="row">
-                    <div class="col s12 m7">
-                      <div class="card">
-                        <div class="card-image">
-                        </div>
-                        <div class="card-content">
-
-				    <ul>
-					<li>Title: <%= books.title %></li>
-                    <li>Price: $<%= books.price %></li>
-                    <li>Description: <%= books.description %></li>
-
-			    	</ul>
-
-            </div>
-            <div class="card-action">
-
-                
-                <a class = 'btn waves-effect waves-light' href="/books/<%=books._id %>/edit">Edit</a>
-
-             
-
-                <form class ='btn waves-effect waves-light' action="/books/<%= books._id %>?_method=DELETE" method="POST"> <input type="submit" value="Delete" />
-                </form>
-
-
+        <span class ='craigslist'>listing details:</span>
+          <br><br>
+          <span class='headingtitle'>'<%= books.title %> '</span>
+  <br>
+  <br>
+  
+                  <div>
+                  <div class="row">
+                        <div class="card">
+                          <div class="card-image">
+                    
+                          </div>
+                          <div class="card-content">
+              <ul>
+                      <li>Title: <%= books.title %></li>
+                      <li>Price: $<%= books.price %></li>
+                      <li>Description: <%= books.description %></li>
+  
+              </ul>
+  
+              </div>
+              <div class="card-action">
+  
+                  
+                  <a class = 'btn waves-effect waves-light' id='clbutton' href="/books/<%=books._id %>/edit">Edit</a>
+  
+               
+  
+                  <form class ='btn waves-effect waves-light' id='clbutton' action="/books/<%= books._id %>?_method=DELETE" method="POST"> <input type="submit" style="color: white;" value="Delete" />
+                  </form>
+  
+  
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
-        <div>
-        </div>
-        </div>
-
-			</section>
-
-
-
-<form class="comments" 
-  action="/books/<%= books._id %>/comments" method="POST">
-  <label>Comments</label><br>
+      
+          <div>
+          </div>
+          </div>
   
-  <textarea name="content" id ='commentbox' ></textarea>
-  <br>
-  <input type="submit" class='btn waves-effect waves-light' value="Add Comment">
-</form>
+        </section>
+  
 
 
-<% if (books.comments.length) { %>
-  <div class ='reviews'>
-    <thead>
-      <tr>
-        <th>Comments</th>
 
+        <form class="comments" 
+        action="/books/<%= books._id %>/comments" method="POST">
+        <!-- <label>Comments</label><br> -->
         
-    </tr>
-</thead>
-<body>
-    <div>
-    <% books.comments.forEach(function(r) { %>
-        <tr>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.content %></td> 
-            <br>
-            <td>
-            <form action="/books/<%= books.comments._id %>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete" /></form>
-
-             </td>
-            </div>
-    </tr>
-    
-    
-    <% }); %>
-</div>
-</body>
-
-<% } else { %>
-    <h5>No Comments Yet</h5>
-    <% } %>
-    
-    
-
-
-
+        <textarea name="content" id ='commentbox' placeholder='add a comment here!'></textarea>
+        <br>
+        <input type="submit" class='btn waves-effect waves-light' id='clbutton' value="Add Comment">
+      </form>
+      
+      <br><br>
+      <% if (books.comments.length) { %>
+      
+       
+      <body>
+        
+        <div>
+          <p class="collection-header"style ='text-align:center'><span class='craigslist'>listing comments</span></p>
+      
+        <% books.comments.forEach(function(r) { %>
+      
+            <ul class="collection with-header">
+              
+                <li class ='collection-item'><div><span style="color: grey;"><%= r.createdAt.toLocaleDateString() %> </span>
+                  <br><br>
+                <%= r.content %>
+                <form class = 'secondary-content' action="/books/<%= books.comments._id %>?_method=DELETE" method="POST">
+                  <input type="submit" value="Delete" /></form>
+              </div></li> 
+               
+            
+      
+               
+                </div>
+       
+        
+        
+      </ul>
+      
+      
+      <% }); %>
+      
+      
+      
+      
+      
+      
+      
+      
+      <% } else { %>
+          <h5>No Comments Yet</h5>
+          <% } %>
+          
+          
+      
+      
     
 		</main>
 
         <footer class="page-footer"id ='navbar'>
-  <div class="container">
         Lead Developers: Jack Glazer & Nat Zeng
-        </div>
       </div>
     </footer>
 
