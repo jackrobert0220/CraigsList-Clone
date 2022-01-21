@@ -26,4 +26,4 @@ const electronicSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Electronic', electronicsSchema);
+module.exports = mongoose.model('Electronic', electronicSchema);

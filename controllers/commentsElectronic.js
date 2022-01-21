@@ -1,7 +1,7 @@
 const db = require('../models');
 
 function create(req, res) {
-    db.electronic.findById(req.params.id, function (err, electronics) {
+    db.Electronic.findById(req.params.id, function (err, electronics) {
         if(err) return res.send(err)
         electronics.comments.push(req.body);
         electronics.save(function (err){
