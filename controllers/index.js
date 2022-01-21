@@ -6,4 +6,5 @@ module.exports = {
     furniture: require('./furniture'),
     commentsBook: require('./commentsBook'),
     commentsElectronic: require('./commentsElectronic'),
+    commentsFurniture1: require('./commentsFurniture1'),
 };
