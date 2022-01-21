@@ -73,28 +73,32 @@
 
 			</section>
 
-<form id="add-comment-form" 
+
+
+<form class="comments" 
   action="/posts/<%= posts._id %>/comments" method="POST">
-  <label>Comments</label>
-  <textarea name="content"></textarea>
+  <label>Comments</label><br>
   
-  <input type="submit" value="Add Comment">
+  <textarea name="content" id ='commentbox' ></textarea>
+  <br>
+  <input type="submit" class='btn waves-effect waves-light' value="Add Comment">
 </form>
 
 
 <% if (posts.comments.length) { %>
-  <table>
+  <table class ='reviews'>
     <thead>
       <tr>
-        <th>Review</th>
+        <th>Comments</th>
 
         
     </tr>
 </thead>
-<tbody>
+<body>
+    <div>
     <% posts.comments.forEach(function(r) { %>
         <tr>
-            <!-- <td><%= r.createdAt.toLocaleDateString() %></td> -->
+            <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.content %></td> 
             <br>
             <td>
@@ -107,10 +111,11 @@
     
     
     <% }); %>
-</tbody>
+</div>
+</body>
 
 <% } else { %>
-    <h5>No Reviews Yet</h5>
+    <h5>No Comments Yet</h5>
     <% } %>
     
     

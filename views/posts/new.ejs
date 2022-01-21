@@ -7,7 +7,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <%- include ('../partials/head.ejs') %>
 
     </head>
@@ -25,24 +25,29 @@
 
     
     
-    <br>
-    <br><br>
     <div>
+        <section class = 'editformsection'>
+            <h5>Create a new listing</h5>
+
+        
+        <div class ='editform'>
         <form id="new-form" action="/posts" method="POST">
+            
             <label>Posting Title:</label>
             <input type="text" name="title" placeholder ='What are you selling?'>
             <label>Price:</label>
-            <input type="text" name="price" placeholder = '$0'>
+            <input type="number" name="price" placeholder = '$0'>
         
             </select>
             <br>
             <label>Description</label>
             <input type="text" name="description" placeholder ='Tell us about it!'>
    
-            <input type="submit" value="Create" />
+            <input type="submit"  value="Create Listing" />
 
           </form>
-
+        </div>
+</section>
         </div>
     </body>
 </html>
