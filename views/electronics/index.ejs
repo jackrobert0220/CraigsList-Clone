@@ -23,11 +23,14 @@
             </div>
           </nav>
 
-    
+    <br>
+
 <main>
-        <div>
-       <h3>Listings:</h3>
-       <br>
+       <div class ='indexform'> 
+        <p class ='craigslist'> electronics listings: </p>
+    <div class='editformsection' id ='postlistings'>
+
+     
 
        <% if(!electronics.length) { %>
         <p>There is nothing for sale yet!</p>
@@ -35,15 +38,13 @@
 
         <ul>
             <% electronics.forEach(electronic => { %>
-            <li>
-                <a href="/electronics/<%= electronic._id %>"> <%= electronic.title %></a>
+            <li><span style ='color:grey'><%= electronic.createdAt.toLocaleDateString() %> </span>
+                <a style="color: blue" href="/electronics/<%= electronic._id %>"> <%= electronic.title%></a> 
+
             </li>
             <% })%>
         </ul>
-        
-
-    </div>
-</main>
+    </main>
 
 <footer class="page-footer"id ='navbar'>
     
