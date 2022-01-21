@@ -57,9 +57,9 @@ const create = (req,res) => {
 //edit
 
 const edit = (req,res) => {
-    db.Furniture1.findById(req.params.id, (err, foundFurniture1) => {
+    db.Furniture1.findById(req.params.id, (err, foundFurniture) => {
         if(err) return res.send(err)
-        const context = {Furniture1: foundFurniture1};
+        const context = {furniture: foundFurniture};
         res.render('furniture/edit', context)
     });
 };
