@@ -4,4 +4,5 @@ module.exports = {
     books: require('./books'),
     electronics: require('./electronics'),
     furniture: require('./furniture'),
+    commentsBook: require('./commentsBook'),
 };
