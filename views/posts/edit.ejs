@@ -30,11 +30,12 @@
         
 
 		<main>
-        
+        <br><br><br><br>
 			<section class = 'editformsection'>
-                <h5>Edit Listing: <%= posts.title %></h5>
-
-            
+                <span class='craigslist'>edit listing for: </span>
+                <br><br>
+                <span class='headingtitle'>'<%= posts.title %> '</span>
+            <br><br>
             <div class ='editform'>
 
 			<form action="/posts/<%= posts._id%>?_method=PUT" method="POST">
@@ -57,7 +58,7 @@
 						value="<%= posts.price %>"/>
 				</p>
                 Description
-
+<br><br>
                 <textarea type="text" name="description" placeholder="Body">
                     <%= posts.description %></textarea>
                     <p>

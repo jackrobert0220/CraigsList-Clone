@@ -21,10 +21,12 @@
               </ul>
             </div>
           </nav>
+
+
        <br>
 <main>
        <div class ='indexform'> 
-        <p class ='headingtitle'> Post Listings: </p>
+        <p class ='craigslist'> post listings: </p>
     <div class='editformsection' id ='postlistings'>
 
      
@@ -35,8 +37,8 @@
 
         <ul>
             <% posts.forEach(post => { %>
-            <li><span style="color: grey;"><%= post.createdAt.toLocaleDateString() %> </span>
-                <a href="/posts/<%= post._id %>"> <%= post.title%></a> 
+            <li><span style ='color:grey'><%= post.createdAt.toLocaleDateString() %> </span>
+                <a style="color: blue" href="/posts/<%= post._id %>"> <%= post.title%></a> 
 
             </li>
             <% })%>
