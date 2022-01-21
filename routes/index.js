@@ -10,11 +10,12 @@ const router = express.Router();
 
 
 module.exports = {
-	posts: require("./posts"),
+	gigs: require("./gigs"),
   books: require('./books'),
-  comments: require('./comments'),
-  furniture: require('./furniture'),
   electronics: require('./electronics'),
+  furniture: require('./furniture'),
+  commentsGig: require('./commentsGig'),
   commentsBook: require('./commentsBook'),
   commentsElectronic: require('./commentsElectronic'),
+  commentsFurniture1: require('./commentsFurniture1'),
 };

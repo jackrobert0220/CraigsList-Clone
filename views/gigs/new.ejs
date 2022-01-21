@@ -12,31 +12,28 @@
 
     </head>
     <body>
+
+    <main>
         <nav>
             <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/posts">Go Back</a></li>
-                <li><a href="/posts/new">Create a New Listing!</a></li>
-                <li><a href="/posts">View All Post Listings</a></li>
+                <li><a href="/">Go Back</a></li>
+                <li><a href="/gigs/new">Create a New Listing!</a></li>
+                <li><a href="/gigs">View all gigs listings</a></li>
             </ul>
             </div>
           </nav>
 
-    <main>
+    
     
     <div>
-        <br><br><br><br>
-
         <section class = 'editformsection'>
-            <span class='craigslist'>create a new listing</span>
-            <br>            <br>
-            <br>
-
+            <h5>Create a new listing</h5>
 
         
         <div class ='editform'>
-        <form id="new-form" action="/posts" method="POST">
+        <form id="new-form" action="/gigs" method="POST">
             
             <label>Posting Title:</label>
             <input type="text" name="title" placeholder ='What are you selling?'>
@@ -48,8 +45,8 @@
             <label>Description</label>
             <input type="text" name="description" placeholder ='Tell us about it!'>
    
-            <input type="submit"  class = 'btn waves-effect waves-light' id='clbutton' value="Create Listing" />
-<br><br>
+            <input type="submit"  value="Create Listing" />
+
           </form>
         </div>
 </section>
@@ -57,7 +54,9 @@
         </main>
 
         <footer class="page-footer"id ='navbar'>
+            
                   Lead Developers: Jack Glazer & Nat Zeng
+                  
                 </div>
               </footer>
 

@@ -1,7 +1,6 @@
 module.exports = {
-	posts: require("./post"),
+	Gig: require('./Gig'),
     Book: require('./Book'),
     Electronic: require('./Electronic'),
-    furniture: require('./furniture'),
-
+    Furniture1: require('./Furniture1'),
 };
