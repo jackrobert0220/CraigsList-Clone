@@ -7,7 +7,7 @@ const commentSchema = new Schema({
     timestamps: true
 });
 
-const booksSchema = new Schema({
+const bookSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -26,4 +26,4 @@ const booksSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Book', booksSchema);
+module.exports = mongoose.model('Book', bookSchema);

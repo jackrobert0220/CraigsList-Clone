@@ -5,7 +5,7 @@ const db = require('../models');
 
 //index
 const index = (req,res) =>{
-    db.books.find({}, function(err, foundBooks) {
+    db.Book.find({}, function(err, foundBooks) {
         if(err) return res.send(err);
         const context = {books: foundBooks};
         res.render('books/index', context)
@@ -13,17 +13,17 @@ const index = (req,res) =>{
 };
 
 //new
-const newPost = (req, res) => {
-    db.books.find({}, (err, foundBooks) => {
+const newBook = (req, res) => {
+    db.Book.find({}, (err, foundBook) => {
         if(err) return res.send(err);
-        const context = {books: foundBooks};
+        const context = {book: foundBook};
         res.render('books/new', context)
     });
 };
 
 //delete
 const destroy = (req, res)=> {
-    db.books.findByIdAndDelete(req.params.id, (err, foundPost) => {
+    db.Book.findByIdAndDelete(req.params.id, (err, foundBook) => {
         if (err) return res.send(err);
 
         return res.redirect('/books')
@@ -33,22 +33,22 @@ const destroy = (req, res)=> {
 //update
 
 const update = (req,res) =>{
-    db.books.findByIdAndUpdate(req.params.id,
+    db.Book.findByIdAndUpdate(req.params.id,
         {
             $set: {...req.body},
         },
 
         {new:true},
-        (err, updatedBooks) => {
+        (err, updatedBook) => {
             if(err) return res.send(err);
-            return res.redirect(`/books/${updatedBooks._id}`)
+            return res.redirect(`/books/${updatedBook._id}`)
         });
 };
 
 //create
 
 const create = (req,res) => {
-    db.books.create(req.body, function(err, createdPost) {
+    db.Book.create(req.body, function(err, createdBook) {
         if(err) return res.send(err)
         return res.redirect('/books')
     });
@@ -57,9 +57,9 @@ const create = (req,res) => {
 //edit
 
 const edit = (req,res) => {
-    db.books.findById(req.params.id, (err, foundBooks) => {
+    db.Book.findById(req.params.id, (err, foundBook) => {
         if(err) return res.send(err)
-        const context = {books: foundBooks};
+        const context = {book: foundBook};
         res.render('books/edit', context)
     });
 };
@@ -67,11 +67,11 @@ const edit = (req,res) => {
 //show
 
 const show = (req,res) => {
-    db.books.findById(req.params.id, (err, foundBooks) => {
+    db.Book.findById(req.params.id, (err, foundBooks) => {
         if(err) return res.send(err)
         
 
-        const context = {books: foundPosts}
+        const context = {books: foundBooks}
         return res.render('books/show', context)
 
     });
@@ -83,7 +83,7 @@ module.exports = {
     index,
     show,
     create,
-    newPost,
+    newBook,
     edit,
     update,
     destroy,
