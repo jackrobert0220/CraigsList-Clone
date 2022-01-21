@@ -1,0 +1,55 @@
+.editform {
+    border: 1px solid black;
+    padding: 1.5%;
+    text-align: center;
+    /* margin-top: 25%; */
+    /* width: 65%; */
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.editformsection {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.showcard {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 10%;
+    /* text-align: center; */
+    /* position: fixed; */
+    /* top: 50%; */
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+
+
+.headingtitle {
+font-size: 30px;
+}
+
+.comments {
+    /* border: 1px solid black; */
+    padding: 1.5%;
+    text-align: center;
+}
+
+#commentbox {
+    width: 300px;
+    margin: 0 auto;
+}
