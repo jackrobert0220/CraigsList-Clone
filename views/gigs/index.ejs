@@ -24,26 +24,26 @@
           </nav>
 
     
-<main>
-        <div>
-       <h3>Listings:</h3>
-       <br>
-
-       <% if(!gigs.length) { %>
-        <p>There is nothing for sale yet!</p>
-        <% } %>
-
-        <ul>
-            <% gigs.forEach(Gig => { %>
-            <li>
-                <a href="/gigs/<%= Gig._id %>"> <%= Gig.title %></a>
-            </li>
-            <% })%>
-        </ul>
-        
-
-    </div>
-</main>
+          <main>
+            <div class ='indexform'> 
+             <p class ='craigslist'> electronics listings: </p>
+         <div class='editformsection' id ='postlistings'>
+     
+          
+     
+            <% if(!gigs.length) { %>
+             <p>There is nothing for sale yet!</p>
+             <% } %>
+     
+             <ul>
+                 <% gigs.forEach(gigs => { %>
+                 <li><span style ='color:grey'><%= gigs.createdAt.toLocaleDateString() %> </span>
+                     <a style="color: blue" href="/gigs/<%= gigs._id %>"> <%= gigs.title%></a> 
+     
+                 </li>
+                 <% })%>
+             </ul>
+         </main>
 
 <footer class="page-footer"id ='navbar'>
     

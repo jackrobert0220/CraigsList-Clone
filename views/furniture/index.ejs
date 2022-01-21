@@ -24,26 +24,26 @@
           </nav>
 
     
-<main>
-        <div>
-       <h3>Listings:</h3>
-       <br>
-
-       <% if(!furniture.length) { %>
-        <p>There is nothing for sale yet!</p>
-        <% } %>
-
-        <ul>
-            <% furniture.forEach(furniture1 => { %>
-            <li>
-                <a href="/furniture/<%= furniture1._id %>"> <%= furniture1.title %></a>
-            </li>
-            <% })%>
-        </ul>
-        
-
-    </div>
-</main>
+          <main>
+            <div class ='indexform'> 
+             <p class ='craigslist'> furniture listings: </p>
+         <div class='editformsection' id ='postlistings'>
+     
+          
+     
+            <% if(!furniture.length) { %>
+             <p>There is nothing for sale yet!</p>
+             <% } %>
+     
+             <ul>
+                 <% furniture.forEach(furniture => { %>
+                 <li><span style ='color:grey'><%= furniture.createdAt.toLocaleDateString() %> </span>
+                     <a style="color: blue" href="/furniture/<%= furniture._id %>"> <%= furniture.title%></a> 
+     
+                 </li>
+                 <% })%>
+             </ul>
+         </main>
 
 <footer class="page-footer"id ='navbar'>
     
