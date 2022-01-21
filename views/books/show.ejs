@@ -16,16 +16,17 @@
     </head>
     <body>
 
-        <nav>
-            <div class="nav-wrapper">
-                <a href='/'>OURLIST</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Go Back</a></li>
-                <li><a href="/books/new">Create a New Listing!</a></li>
-                <li><a href="/books">View all Post listings</a></li>
-            </ul>
-            </div>
-          </nav>
+      <nav>
+        <div class="navbar">
+            <a href='/'>OURLIST</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/books">Go Back</a></li>
+            <li><a href="/books/new">Create a New Listing!</a></li>
+            <li><a href="/books">View all Post listings</a></li>
+        </ul>
+        </div>
+      </nav>
+
 
     
 		<main>
@@ -86,7 +87,7 @@
 
 
 <% if (books.comments.length) { %>
-  <table class ='reviews'>
+  <div class ='reviews'>
     <thead>
       <tr>
         <th>Comments</th>
@@ -96,17 +97,17 @@
 </thead>
 <body>
     <div>
-    <% book.comments.forEach(function(r) { %>
+    <% books.comments.forEach(function(r) { %>
         <tr>
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.content %></td> 
             <br>
             <td>
-            <form action="/books/<%= book.comments._id %>?_method=DELETE" method="POST">
+            <form action="/books/<%= books.comments._id %>?_method=DELETE" method="POST">
               <input type="submit" value="Delete" /></form>
 
              </td>
-        </table>
+            </div>
     </tr>
     
     
@@ -124,12 +125,13 @@
 
     
 		</main>
-        <footer class="page-footer">
-            <div class="container">
-                  OurList by Jack & Nat
-                  </div>
-                </div>
-              </footer>
+
+        <footer class="page-footer"id ='navbar'>
+  <div class="container">
+        Lead Developers: Jack Glazer & Nat Zeng
+        </div>
+      </div>
+    </footer>
 
         <script src="" async defer></script>
     </body>
