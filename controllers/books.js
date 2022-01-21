@@ -77,10 +77,7 @@ const show = (req,res) => {
     });
 };
 
-module.exports = {
-    create,
-    destroy,
-}
+
 
 
 

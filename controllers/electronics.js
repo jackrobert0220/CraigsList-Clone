@@ -5,7 +5,7 @@ const db = require('../models');
 
 //index
 const index = (req,res) =>{
-    db.electronics.find({}, function(err, foundElectronics) {
+    db.Electronic.find({}, function(err, foundElectronics) {
         if(err) return res.send(err);
         const context = {electronics: foundElectronics};
         res.render('electronics/index', context)
@@ -14,7 +14,7 @@ const index = (req,res) =>{
 
 //new
 const newPost = (req, res) => {
-    db.electronics.find({}, (err, foundElectronics) => {
+    db.Electronic.find({}, (err, foundElectronics) => {
         if(err) return res.send(err);
         const context = {electronics: foundElectronics};
         res.render('electronics/new', context)
@@ -23,7 +23,7 @@ const newPost = (req, res) => {
 
 //delete
 const destroy = (req, res)=> {
-    db.electronics.findByIdAndDelete(req.params.id, (err, foundElectronics) => {
+    db.Electronic.findByIdAndDelete(req.params.id, (err, foundElectronic) => {
         if (err) return res.send(err);
 
         return res.redirect('/electronics')
@@ -33,22 +33,22 @@ const destroy = (req, res)=> {
 //update
 
 const update = (req,res) =>{
-    db.electronics.findByIdAndUpdate(req.params.id,
+    db.Electronic.findByIdAndUpdate(req.params.id,
         {
             $set: {...req.body},
         },
 
         {new:true},
-        (err, updatedElectronics) => {
+        (err, updatedElectronic) => {
             if(err) return res.send(err);
-            return res.redirect(`/electronics/${updatedElectronics._id}`)
+            return res.redirect(`/electronics/${updatedElectronic._id}`)
         });
 };
 
 //create
 
 const create = (req,res) => {
-    db.electronics.create(req.body, function(err, createdElectronics) {
+    db.Electronic.create(req.body, function(err, createdElectronic) {
         if(err) return res.send(err)
         return res.redirect('/electronics')
     });
@@ -57,9 +57,9 @@ const create = (req,res) => {
 //edit
 
 const edit = (req,res) => {
-    db.electronics.findById(req.params.id, (err, foundElectronics) => {
+    db.Electronic.findById(req.params.id, (err, foundElectronic) => {
         if(err) return res.send(err)
-        const context = {electronics: foundElectronics};
+        const context = {Electronic: foundElectronic};
         res.render('electronics/edit', context)
     });
 };
@@ -67,11 +67,11 @@ const edit = (req,res) => {
 //show
 
 const show = (req,res) => {
-    db.electronics.findById(req.params.id, (err, foundElectronics) => {
+    db.Electronic.findById(req.params.id, (err, foundElectronics) => {
         if(err) return res.send(err)
         
 
-        const context = {eletronics: foundElectronics}
+        const context = {electronics: foundElectronics}
         return res.render('electronics/show', context)
 
     });
