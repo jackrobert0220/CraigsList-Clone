@@ -5,14 +5,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>OurList Post || <%= posts.title %></title>
+        <title>OurList Post || <%= Gig.title %></title>
 
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <%- include ('../partials/head.ejs') %>
-
         <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <%- include ('../partials/head.ejs') %>
 
     </head>
     <body>
@@ -21,31 +20,30 @@
             <div class="navbar">
                 <a href='/'>OURLIST</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/posts/<%=posts._id%>">Go Back</a></li>
-                <li><a href="/posts/new">Create a New Listing!</a></li>
-                <li><a href="/posts">View all Post listings</a></li>
+                <li><a href="/gigs/<%=Gig._id%>">Go Back</a></li>
+                <li><a href="/gigs/new">Create a New Listing!</a></li>
+                <li><a href="/gigs">View all gigs listings</a></li>
             </ul>
             </div>
           </nav>
         
 
 		<main>
-        <br><br><br><br>
+        
 			<section class = 'editformsection'>
-                <span class='craigslist'>edit listing for: </span>
-                <br><br>
-                <span class='headingtitle'>'<%= posts.title %> '</span>
-            <br><br>
+                <h5>Edit Listing: <%= Gig.title %></h5>
+
+            
             <div class ='editform'>
 
-			<form action="/posts/<%= posts._id%>?_method=PUT" method="POST">
+			<form action="/gigs/<%= Gig._id%>?_method=PUT" method="POST">
 				<p>
                     Title
 					<input
 						type="text"
 						name="title"
 						placeholder="Title"
-						value="<%= posts.title %>"/> 
+						value="<%= Gig.title %>"/> 
 				</p>
 				<p>
 
@@ -55,14 +53,14 @@
 						type="number"
 						name="price"
 						placeholder="price"
-						value="<%= posts.price %>"/>
+						value="<%= Gig.price %>"/>
 				</p>
                 Description
-<br><br>
+
                 <textarea type="text" name="description" placeholder="Body">
-                    <%= posts.description %></textarea>
+                    <%= Gig.description %></textarea>
                     <p>
-                <button class="btn waves-effect waves-light" id='clbutton' type="submit" name="action">Update Listing
+                <button class="btn waves-effect waves-light" type="submit" name="action">Update Listing
 
                   </button>
 			</form>
@@ -80,13 +78,11 @@
 
 
         <footer class="page-footer"id ='navbar'>
-  
-              Lead Developers: Jack Glazer & Nat Zeng
-         
-            </div>
-          </footer>
-
-
+            
+                  Lead Developers: Jack Glazer & Nat Zeng
+                  
+                </div>
+              </footer>
 
 
 
