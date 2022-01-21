@@ -10,7 +10,7 @@ const router = express.Router();
 
 
 module.exports = {
-	posts: require("./gigs"),
+	gigs: require("./gigs"),
   books: require('./books'),
   electronics: require('./electronics'),
   furniture: require('./furniture'),
