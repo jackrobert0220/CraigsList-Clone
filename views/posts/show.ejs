@@ -32,8 +32,8 @@
 
 			<section class = 'showcard'>
       <span class ='craigslist' >details about:</span>
-        <br>
-        <%= posts.title %>
+        <br><br>
+        <span class='headingtitle'>'<%= posts.title %> '</span>
 <br>
 <br>
 
@@ -87,14 +87,14 @@
   <input type="submit" class='btn waves-effect waves-light' id='clbutton' value="Add Comment">
 </form>
 
-
+<br><br>
 <% if (posts.comments.length) { %>
 
  
 <body>
   
   <div>
-    <p class="collection-header"><h5>Comments</h5></p>
+    <p class="collection-header"style ='text-align:center'><span class='craigslist'>listing comments</span></p>
 
   <% posts.comments.forEach(function(r) { %>
 
