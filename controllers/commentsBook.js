@@ -11,7 +11,7 @@ function create(req, res) {
   }
 
   const destroy = (req, res)=> {
-    db.books.findByIdAndDelete(req.params.id, (err, foundPost) => {
+    db.Book.findByIdAndDelete(req.params.id, (err, foundPost) => {
         if (err) return res.send(err);
 
         return res.redirect(`/books/${books._id}`)
