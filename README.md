@@ -7,6 +7,8 @@
 	Each listing will feature full CRUD abilities. Users can add a new one, edit or delete and existing one and add comments to whichever one they chose.
 
   First, User Stories and User Data Flow was setup to establish how the site will function once completed. Then a mockup wireframes were drawn up as a visual guide for how these functions were going to be accessed. 
+  
+* VISUAL AIDS ARE ALL INCLUDED IN THE 'WIREFRAMES' FOLDER OF THIS PROJECT*
 
    The server.js was coded, along with the .gitignore file to set the basic structure of our stack-to-be. All dependencies were then installed along with building the config folder to establish deployment with Heroku and MongoDB.
 
