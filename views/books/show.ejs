@@ -18,8 +18,7 @@
 
       <nav>
         <div class="navbar">
-            <a href='/'>OURLIST</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <a href='/' class ='ourlistpadding'>OURLIST</a>          <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/books">Go Back</a></li>
             <li><a href="/books/new">Create a New Listing!</a></li>
             <li><a href="/books">View all Books listings</a></li>
@@ -104,8 +103,16 @@
                 <li class ='collection-item'><div><span style="color: grey;"><%= r.createdAt.toLocaleDateString() %> </span>
                   <br><br>
                 <%= r.content %>
+
+
+//--- delete button
+
                 <form class = 'secondary-content' action="/books/<%= books.comments._id %>?_method=DELETE" method="POST">
                   <input type="submit" value="Delete" /></form>
+
+
+//---end delete button
+
               </div></li> 
                
             
@@ -137,11 +144,12 @@
     
 		</main>
 
-        <footer class="page-footer"id ='navbar'>
-
-        Lead Developers: Jack Glazer & Nat Zeng
-
-    </footer>
+    <footer class="page-footer"id ='navbar'>
+      <span id='footerpadding'>
+    Lead Developers: Jack Glazer & Nat Zeng
+      </span>
+  </div>
+</footer>
 
     </body>
 </html>

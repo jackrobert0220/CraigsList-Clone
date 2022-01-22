@@ -18,7 +18,7 @@
 
       <nav>
         <div class="navbar">
-            <a href='/'>OURLIST</a>
+            <a href='/' class ='ourlistpadding'>OURLIST</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/gigs">Go Back</a></li>
             <li><a href="/gigs/new">Create a New Listing!</a></li>
@@ -58,7 +58,7 @@
                   
                   <a class = 'btn waves-effect waves-light' id='clbutton' href="/gigs/<%=gigs._id %>/edit">Edit</a>
   
-               
+              
   
                   <form class ='btn waves-effect waves-light' id='clbutton' action="/gigs/<%= gigs._id %>?_method=DELETE" method="POST"> <input type="submit" style="color: white;" value="Delete" />
                   </form>
@@ -103,8 +103,13 @@
             <li class ='collection-item'><div><span style="color: grey;"><%= r.createdAt.toLocaleDateString() %> </span>
               <br><br>
             <%= r.content %>
-            <form class = 'secondary-content' action="/gigs/<%= gigs.comments._id %>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete" /></form>
+
+<!-- //---delete button here -----// -->
+
+<form class = 'secondary-content' action="/gigs/<%= gigs.comments._id %>?_method=DELETE" method="POST">
+<input type="submit" value="Delete" /></form>
+
+<!-- //---delete button ends here-----// -->
           </div></li> 
            
         
@@ -132,9 +137,9 @@
 		</main>
 
         <footer class="page-footer"id ='navbar'>
-  
+          <span id='footerpadding'>
         Lead Developers: Jack Glazer & Nat Zeng
-       
+          </span>
       </div>
     </footer>
 

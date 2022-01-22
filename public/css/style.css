@@ -101,3 +101,12 @@ font-family: times;
     background: purple;
 
 }
+
+.ourlistpadding {
+    padding: 4%;
+    font-size: 20px;
+}
+
+#footerpadding {
+    padding: 1.5%;
+}
